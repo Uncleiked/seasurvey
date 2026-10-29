@@ -11,7 +11,7 @@ Validated on 29 October 2026 against the production static export in Chrome on W
 
 ## Responsive review
 
-Checked 320px, 390px, 768px, and 1440px viewport widths. At each size:
+Checked 320px, 375px, 390px, 430px, 540px, 768px, 1024px, and 1440px viewport widths. At each size:
 
 - Document width matched viewport width; no horizontal overflow.
 - All local images loaded successfully.
@@ -46,6 +46,12 @@ All 17 browser checks passed:
 ## Accessibility and browser console
 
 Axe scans using WCAG 2 A, WCAG 2 AA, and WCAG 2.1 AA tags reported zero violations in the desktop page, open mobile navigation, and open project dialog. Chrome reported zero console errors and warnings during the final review. Automated scans are a useful baseline; this is not a claim of exhaustive assistive-technology or cross-browser certification.
+
+## Mobile refinement and client carousel
+
+The phone layout was refined with larger supporting text, a simplified header, balanced call-to-action buttons, more compact image and service card proportions, horizontally scrollable project filters, a vertical process timeline, and larger form and footer touch targets.
+
+The client carousel was checked at 390px and 1440px: it moves automatically, pauses and resumes, and respects reduced motion. The two rendered groups have identical widths and each is wider than the visible viewport. The measured difference between the start and end positions at the loop seam was zero at both sizes, preventing a visible reset or blank gap. Repeated logos are hidden from assistive technology.
 
 ## Demo behavior
 

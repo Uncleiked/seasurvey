@@ -1,9 +1,10 @@
 async (page) => {
+  const baseURL = new URL(page.url()).origin;
   const checked = [];
   const check = (condition, message) => { if (!condition) throw new Error(message); checked.push(message); };
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.goto("http://127.0.0.1:3000/");
+  await page.goto(`${baseURL}/`);
   await page.getByRole("button", { name: "Residential", exact: true }).click();
   check(await page.locator(".project-card").count() === 1, "Residential filter shows one matching project");
   const projectTrigger = page.getByRole("button", { name: "View A private address in Ikoyi" });
@@ -46,7 +47,7 @@ async (page) => {
   check(await page.getByRole("button", { name: "Open navigation", exact: true }).getAttribute("aria-expanded") === "false", "Choosing a section closes mobile navigation");
   check(await page.locator("header").evaluate((element) => Math.abs(element.getBoundingClientRect().top) < 1), "Navigation stays sticky after scrolling");
   check(await page.locator(".hero-photo").evaluate((element) => getComputedStyle(element).transform === "none"), "Reduced motion disables hero parallax");
-  await page.goto("http://127.0.0.1:3000/privacy/");
+  await page.goto(`${baseURL}/privacy/`);
   check(await page.getByRole("heading", { name: "Privacy, kept simple.", exact: true }).count() === 1, "Privacy route works");
   return { checked, total: checked.length };
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight, Check, Compass, Sparkles } from "lucide-react";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { ClientCarousel } from "@/components/client-carousel";
 import { Services } from "@/components/services";
 import { Projects } from "@/components/projects";
 import { Contact } from "@/components/contact";
@@ -15,32 +16,7 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
-        <section
-          className="client-section"
-          aria-label="Selected clients, affiliates, and partners listed on the original company website"
-        >
-          <div className="container client-inner">
-            <p>
-              In good company.<span>Some of the names in our story.</span>
-            </p>
-            <div className="client-names">
-              <span className="client-cbn">CBN</span>
-              <span className="client-firs">
-                FIRS<span>Federal Inland Revenue Service</span>
-              </span>
-              <span className="client-stanbic">
-                <span className="client-shield" aria-hidden="true">
-                  S
-                </span>
-                Stanbic IBTC
-              </span>
-              <span className="client-mtn">MTN</span>
-              <span className="client-transcorp">
-                Transcorp<span>Group</span>
-              </span>
-            </div>
-          </div>
-        </section>
+        <ClientCarousel />
         <section
           id="about"
           className="section about-section"

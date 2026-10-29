@@ -1,6 +1,7 @@
 async (page) => {
+  const baseURL = new URL(page.url()).origin;
   await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto("http://127.0.0.1:3000/");
+  await page.goto(`${baseURL}/`);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.addScriptTag({ path: "node_modules/axe-core/axe.min.js" });
   const result = await page.evaluate(async () => {

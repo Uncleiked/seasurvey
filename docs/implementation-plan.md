@@ -8,7 +8,7 @@ Create a sophisticated architectural consultancy website for SEA Surveyors Limit
 
 1. Sticky translucent navigation with accessible mobile menu and clear enquiry action.
 2. Large editorial hero, organic architectural photo, restrained scroll parallax, floating glass project note.
-3. Client-name strip reflecting names listed on the original website.
+3. Seamlessly looping client carousel reflecting names listed on the original website, with a pause control, accessible duplicate handling, and a static scrollable version for reduced motion.
 4. About section with an organic image composition and concise company positioning.
 5. Bento service grid with expandable service details.
 6. Filterable project portfolio; accessible project detail dialogs using original project photographs.

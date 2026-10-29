@@ -1,9 +1,10 @@
 async (page) => {
+  const baseURL = new URL(page.url()).origin;
   const results = [];
   await page.emulateMedia({ reducedMotion: "no-preference" });
-  for (const width of [1440, 768, 390, 320]) {
+  for (const width of [1440, 1024, 768, 540, 430, 390, 375, 320]) {
     await page.setViewportSize({ width, height: width < 768 ? 844 : 1000 });
-    await page.goto("http://127.0.0.1:3000/");
+    await page.goto(`${baseURL}/`);
     await page.waitForFunction(() => document.fonts.status === "loaded");
     for (let y = 0; y < await page.evaluate(() => document.body.scrollHeight); y += 650) {
       await page.evaluate((position) => window.scrollTo({ top: position, behavior: "instant" }), y);

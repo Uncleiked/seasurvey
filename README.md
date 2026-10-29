@@ -26,6 +26,7 @@ The production export is in `out/`. Deploy that directory to any static host. `n
 
 - Sticky glass navigation with a keyboard-accessible mobile menu.
 - Responsive organic image compositions, a scroll parallax hero, and smooth section reveals.
+- Seamlessly looping client carousel on desktop and mobile, with pause/resume and reduced-motion support.
 - Bento service cards with expandable details.
 - Project category filters and native accessible project dialogs.
 - Validated enquiry form with email draft preparation and a copy option.
@@ -59,6 +60,7 @@ For browser review, start the production preview, then use the installed Playwri
 ```sh
 npx playwright-cli -s=sea open http://127.0.0.1:3000 --browser chrome
 npx playwright-cli -s=sea run-code --filename scripts/browser-review.mjs
+npx playwright-cli -s=sea run-code --filename scripts/browser-carousel.mjs
 npx playwright-cli -s=sea run-code --filename scripts/browser-interactions.mjs
 npx playwright-cli -s=sea run-code --filename scripts/browser-accessibility.mjs
 ```
