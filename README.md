@@ -28,7 +28,7 @@ The production export is in `out/`. Deploy that directory to any static host. `n
 - Responsive organic image compositions, a scroll parallax hero, and smooth section reveals.
 - Seamlessly looping client carousel on desktop and mobile, with pause/resume and reduced-motion support.
 - Bento service cards with expandable details.
-- Project category filters and native accessible project dialogs.
+- Project category filters and full project pages with shareable URLs, responsive imagery, project summaries, and related work.
 - Validated enquiry form with email draft preparation and a copy option.
 - A privacy page, metadata, local fonts, optimized WebP photography, and reduced-motion support.
 
@@ -61,6 +61,7 @@ For browser review, start the production preview, then use the installed Playwri
 npx playwright-cli -s=sea open http://127.0.0.1:3000 --browser chrome
 npx playwright-cli -s=sea run-code --filename scripts/browser-review.mjs
 npx playwright-cli -s=sea run-code --filename scripts/browser-carousel.mjs
+npx playwright-cli -s=sea run-code --filename scripts/browser-project-pages.mjs
 npx playwright-cli -s=sea run-code --filename scripts/browser-interactions.mjs
 npx playwright-cli -s=sea run-code --filename scripts/browser-accessibility.mjs
 ```

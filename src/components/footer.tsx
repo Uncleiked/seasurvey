@@ -2,7 +2,11 @@ import { ArrowUp, ArrowUpRight } from "lucide-react";
 import { company } from "@/lib/content";
 import { Brand } from "./ui";
 
-export function Footer() {
+export function Footer({
+  backToTopHref = "#home",
+}: {
+  backToTopHref?: string;
+}) {
   return (
     <footer className="site-footer">
       <div className="container">
@@ -33,7 +37,7 @@ export function Footer() {
             </a>
             <a href="/privacy/">Privacy</a>
           </div>
-          <a className="back-top" href="#home" aria-label="Back to top">
+          <a className="back-top" href={backToTopHref} aria-label="Back to top">
             <ArrowUp size={20} />
           </a>
         </div>

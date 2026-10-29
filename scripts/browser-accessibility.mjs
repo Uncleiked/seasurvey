@@ -18,12 +18,19 @@ async (page) => {
   reports.push({ state: "mobile navigation open", ...mobile });
   await page.keyboard.press("Escape");
   await page.getByRole("button", { name: "Residential", exact: true }).click();
-  await page.getByRole("button", { name: "View A private address in Ikoyi" }).click();
-  const modal = await page.evaluate(async () => {
+  await page.getByRole("link", { name: "View A private address in Ikoyi" }).click();
+  await page.waitForURL("**/projects/ikoyi-residence/");
+  await page.addScriptTag({ path: "node_modules/axe-core/axe.min.js" });
+  const projectPage = await page.evaluate(async () => {
     const report = await window.axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21aa"] } });
     return { violations: report.violations.map((item) => ({ id: item.id, nodes: item.nodes.map((node) => ({ target: node.target, summary: node.failureSummary })) })), passes: report.passes.length };
   });
-  reports.push({ state: "project dialog open", ...modal });
-  await page.keyboard.press("Escape");
+  reports.push({ state: "mobile project page", ...projectPage });
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  const desktopProject = await page.evaluate(async () => {
+    const report = await window.axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21aa"] } });
+    return { violations: report.violations.map((item) => ({ id: item.id, nodes: item.nodes.map((node) => ({ target: node.target, summary: node.failureSummary })) })), passes: report.passes.length };
+  });
+  reports.push({ state: "desktop project page", ...desktopProject });
   return reports;
 }

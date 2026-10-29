@@ -7,7 +7,7 @@ Validated on 29 October 2026 against the production static export in Chrome on W
 - Next.js 16.4.3 production build passed, including its TypeScript checks.
 - Standalone TypeScript validation passed.
 - npm dependency audit reported zero vulnerabilities after removing an unused preview dependency.
-- Home, privacy, and not-found pages were generated successfully.
+- Home, privacy, not-found, and all five project detail pages were generated successfully.
 
 ## Responsive review
 
@@ -26,9 +26,9 @@ Desktop, tablet, and phone screenshots were reviewed. Temporary screenshots are 
 All 17 browser checks passed:
 
 1. Residential project filtering.
-2. Correct content in the selected project dialog.
-3. Keyboard focus moves into the dialog.
-4. Focus returns to the trigger after Escape closes the dialog.
+2. Correct content in the selected full project page.
+3. Project details have their own URL and full page layout.
+4. Back to all projects returns to the portfolio.
 5. Specialist project filtering.
 6. Full portfolio reveal.
 7. Accessible service expansion.
@@ -45,7 +45,15 @@ All 17 browser checks passed:
 
 ## Accessibility and browser console
 
-Axe scans using WCAG 2 A, WCAG 2 AA, and WCAG 2.1 AA tags reported zero violations in the desktop page, open mobile navigation, and open project dialog. Chrome reported zero console errors and warnings during the final review. Automated scans are a useful baseline; this is not a claim of exhaustive assistive-technology or cross-browser certification.
+Axe scans using WCAG 2 A, WCAG 2 AA, and WCAG 2.1 AA tags reported zero violations in the homepage, open mobile navigation, and the mobile and desktop project pages. The final valid-page navigation review reported zero console errors and warnings. The separate invalid-route check deliberately requests a missing URL and verifies its expected 404 response. Automated scans are a useful baseline; this is not a claim of exhaustive assistive-technology or cross-browser certification.
+
+## Full project pages
+
+Every portfolio card now links to `/projects/<project-id>/`. Each page is statically generated with project-specific metadata, a responsive image composition, an overview, a factual summary, related projects, and an enquiry link. The existing header and footer support navigation between project pages and homepage sections.
+
+All five pages returned HTTP 200 and passed layout checks at 320px, 390px, 768px, and 1440px, for 20 route and viewport combinations. All related images loaded during the screenshot review. Related project links, browser back navigation, direct refresh, and mobile section navigation were verified. An invalid project URL correctly returned HTTP 404.
+
+Project card links disable speculative prefetching because dynamic segment prefetch URLs are not portable across static hosts. Ordinary Next.js navigation remains enabled, and the final production preview was checked without failed segment requests.
 
 ## Mobile refinement and client carousel
 

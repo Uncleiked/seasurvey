@@ -65,11 +65,19 @@ export type Project = {
   alt: string;
   subtitle: string;
   description: string;
+  projectType: string;
+  location?: string;
+  overviewTitle: string;
+  overview: string;
 };
 
 export const projects: Project[] = [
   {
     id: "firs-headquarters",
+    projectType: "Corporate headquarters",
+    overviewTitle: "A workplace on a different scale.",
+    overview:
+      "The FIRS Corporate Headquarters is part of SEA Surveyors’ corporate office portfolio. The project photography captures the towers during construction, with distinctive red facade panels defining the building’s vertical profile.",
     title: "FIRS Corporate Headquarters",
     category: "Corporate",
     image: "/images/firs-headquarters.webp",
@@ -80,6 +88,10 @@ export const projects: Project[] = [
   },
   {
     id: "scarsdale-offices",
+    projectType: "Corporate office development",
+    overviewTitle: "Space for the working world.",
+    overview:
+      "This office development for Scarsdale Properties Limited is included in SEA Surveyors’ corporate portfolio. The published project imagery presents a substantial office building with a clearly articulated facade and a strong commercial identity.",
     title: "Scarsdale Properties",
     category: "Corporate",
     image: "/images/scarsdale-offices.webp",
@@ -90,6 +102,11 @@ export const projects: Project[] = [
   },
   {
     id: "ikoyi-residence",
+    projectType: "Private residential development",
+    location: "Adeyemi Lawson, Ikoyi, Lagos",
+    overviewTitle: "A more personal kind of ambition.",
+    overview:
+      "Located on Adeyemi Lawson in Ikoyi, Lagos, this private residential development is part of SEA Surveyors’ residential portfolio. Its published imagery brings the living spaces, landscaped setting, and architectural composition into one view.",
     title: "A private address in Ikoyi",
     category: "Residential",
     image: "/images/ikoyi-residence.webp",
@@ -100,6 +117,11 @@ export const projects: Project[] = [
   },
   {
     id: "cbn-learning-centre",
+    projectType: "Learning centre refurbishment",
+    location: "Satellite Town, Lagos",
+    overviewTitle: "A new chapter for an existing place.",
+    overview:
+      "The refurbishment of the CBN Learning Centre in Satellite Town, Lagos, features in SEA Surveyors’ corporate portfolio. This project represents work on an existing facility, alongside the new developments shown elsewhere in the collection.",
     title: "CBN Learning Centre",
     category: "Corporate",
     image: "/images/cbn-learning-centre.webp",
@@ -110,6 +132,10 @@ export const projects: Project[] = [
   },
   {
     id: "ctc-laboratory",
+    projectType: "Laboratory development",
+    overviewTitle: "A place with a precise purpose.",
+    overview:
+      "The CTC laboratory development is a specialist project within SEA Surveyors’ published portfolio. It sits alongside the firm’s office and residential projects, reflecting the different types of building represented in its work.",
     title: "CTC Laboratory",
     category: "Specialist",
     image: "/images/ctc-laboratory.webp",

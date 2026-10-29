@@ -11,7 +11,7 @@ Create a sophisticated architectural consultancy website for SEA Surveyors Limit
 3. Seamlessly looping client carousel reflecting names listed on the original website, with a pause control, accessible duplicate handling, and a static scrollable version for reduced motion.
 4. About section with an organic image composition and concise company positioning.
 5. Bento service grid with expandable service details.
-6. Filterable project portfolio; accessible project detail dialogs using original project photographs.
+6. Filterable project portfolio linking to full, statically generated project pages with original photographs, project-specific metadata, summaries, and related work.
 7. Four-stage project approach explaining discovery, planning, delivery, and handover.
 8. Validated enquiry form that prepares an email in the visitor's mail app; clearly explain that it is a demo and does not submit to a server.
 9. Footer with verified office details, phone, email, navigation, and demo disclosure.
@@ -20,16 +20,16 @@ Create a sophisticated architectural consultancy website for SEA Surveyors Limit
 
 - Next.js App Router, TypeScript strict mode, React, Tailwind CSS v4.
 - Server components for the page shell, metadata, and static content.
-- Small client boundaries for the sticky header, parallax, reveals, service disclosure, portfolio filters/dialogs, and form.
+- Small client boundaries for the sticky header, parallax, reveals, service disclosure, portfolio filters, and form; project detail pages remain server components.
 - Typed company data in `src/lib/content.ts`; design tokens and responsive component styling in `src/app/globals.css`.
-- Reusable `ButtonLink`, `SectionHeading`, `Reveal`, `Brand`, and dialog patterns.
+- Reusable `ButtonLink`, `SectionHeading`, `Reveal`, `Brand`, and `ProjectCard` components.
 - Local fonts and local optimized images; static export for portable hosting, without secrets or required backend services.
 - Native anchor navigation, CSS smooth scrolling, Motion animation, IntersectionObserver reveals, and full reduced-motion support.
-- Semantic landmarks, skip link, visible focus, keyboard access, proper form labels, dialog focus management, and a mobile menu that closes on Escape.
+- Semantic landmarks, skip link, visible focus, keyboard access, proper form labels, native project links, and a mobile menu that closes on Escape.
 
 ## Validation
 
-Run TypeScript validation and the production export. Use browser checks at 390px, 768px, and 1440px, and a 320px overflow check. Verify mobile navigation, anchor links, project filtering and dialogs, form validation/email preparation, reduced motion, image loading, accessibility, and absence of console errors. Inspect screenshots and refine the composition before handoff.
+Run TypeScript validation and the production export. Use browser checks at 390px, 768px, and 1440px, and a 320px overflow check. Verify mobile navigation, anchor links, project filtering, full project routes, direct refresh, browser back navigation, form validation/email preparation, reduced motion, image loading, accessibility, and absence of console errors. Inspect screenshots and refine the composition before handoff.
 
 ## Scope and assets
 
