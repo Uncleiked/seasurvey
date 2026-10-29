@@ -1,0 +1,7 @@
+tooling/
+output/
+reference/
+out/
+node_modules/
+.next/
+scripts/browser-*.mjs

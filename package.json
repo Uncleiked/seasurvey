@@ -1,0 +1,33 @@
+{
+  "name": "sea-surveyors",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "node scripts/preview.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview": "node scripts/preview.mjs",
+    "format": "prettier --write src scripts docs *.json *.ts *.mjs",
+    "assets:optimize": "node scripts/optimize-assets.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "motion": "14.7.1",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "tailwindcss": "4.3.3",
+    "typescript": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@playwright/cli": "latest",
+    "@axe-core/playwright": "latest",
+    "sharp": "latest",
+    "prettier": "latest"
+  }
+}
